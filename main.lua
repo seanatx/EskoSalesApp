@@ -57,5 +57,5 @@ local demoTabs = widget.newTabBar{
 
 
 -- load first scene
-storyboard.gotoScene( "sceneSplash", "fade", 400 )
+storyboard.gotoScene( "sceneQuotes", "fade", 400 )
 

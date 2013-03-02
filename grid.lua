@@ -57,6 +57,7 @@
 			else 
 				txt.x = xp + wid / 2 + design.cellfontfix
 			end
+			txt.y = txt.y + 4
 			grid:insert( txt, false )
 
 		end
@@ -76,36 +77,37 @@ end
 -- below are the settings for the grid
 
 design = {
-	-- column widths
-	cols = { 110, 70, 40, 40 },
+	-- column widths; 260
+	cols = { 170, 20, 60, 20 },
 	-- vertical alignment for header
-	toprowfontfix = -12, 
+	toprowfontfix = -10, 
 	-- left most column is left aligned, so padding from left side
 	leftcolfontfix = 6, 
 	-- in case your chosen font needs some alignment nudging
-	headerfontfix = 1, cellfontfix = 2,
+	headerfontfix = 1, cellfontfix = 3,
 	-- colours
 	header = {
-		bg = { r = 150, g = 20, b = 20, a = 200 },
-		border = { r = 150, g = 20, b = 20, a = 200},
-		height = 30
+		bg = { r = 169, g = 196, b = 147, a = 200 },
+		border = { r = 148, g = 173, b = 130, a = 200},
+		height = 35
 	},
 	row = {
-		bg = { r = 150, g = 100, b = 150, a = 80 },
+		bg = { r = 169, g = 196, b = 147, a = 160 },
 		border = { r = 150, g = 100, b = 150, a = 150 },
 		height = 25
 	}
 }
 
 data = {
-	{ "Product","Descr","Price.","D"}, -- header row
-	{ "Prometheus","UK",5,10 },
-	{ "Logic Bomb","Sweden",7,20 },
-	{ "Psykovsky","Russia",3,6},
-	{ "Hux Flux","Sweden",4,8},
-	{ "Ticon","Sweden",8,30},
-	{ "Odd Harmonic","Aus",2,10},
-	{ "Nam Shub","Aus",8,20}
+	{ "Product","Q","Price.","D"}, -- header row
+	{ "Kongsberg Model XN24",1,74400,1 },
+	{ "XN24 Base package",1,6052,0 },
+	{ "XN24 Designer Style Kit",1,4111,1},
+	{ "XN Series Flex Head",1,5770,1},
+	{ "Deluxe Corrugated Kit",1,5870,1},
+	{ "Ball Point Pens Kit",1,1120,1},
+	{ "XN24 Ship, Install",1,16115,0}
+
 }
 
 -- pass them in and voila.
