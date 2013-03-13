@@ -7,13 +7,12 @@
 local storyboard = require( "storyboard" )
 local scene = storyboard.newScene()
 local grid = require( "grid" ) 
-local KongsList = require( "KongsList" )
-local screenGroup
 
 ---------------------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
 
+local image, text1, text2, text3, memTimer
 
 -- Touch event listener for background image
 local function onSceneTouch( self, event )
@@ -28,7 +27,7 @@ end
 
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
-	screenGroup = self.view
+	local screenGroup = self.view
 
 
 	image = display.newImageRect( "Default-568h@2x.png", 360, 570 )
@@ -56,11 +55,9 @@ function scene:createScene( event )
 	text3.x, text3.y = display.contentWidth * 0.5, display.contentHeight - 70
 	screenGroup:insert( text3 )
 	
-	-- next 2 lines draw a grid (see grid.lua )
-	-- local t = createGrid( design, data )
-	-- t.x, t.y = 30, 150
+	local t = createGrid( design, data )
+	t.x, t.y = 30, 150
 	
-	-- makeList()
 	print( "\n1: createScene Quote  event")
 end
 
@@ -81,8 +78,6 @@ function scene:enterScene( event )
 		text2.x = display.contentWidth * 0.5
 	end
 	memTimer = timer.performWithDelay( 1000, showMem, 1 )
-	
-	makeList( screenGroup )
 end
 
 

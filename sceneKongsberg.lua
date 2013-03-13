@@ -38,7 +38,7 @@ local function onOrientationEventArtiosCAD( event )
 		print( " hit inner orient event on landscape:  " )
 		-- load landscape
 		--local screenGroup = self.view
-		--screenGroup:removeObject("portrait")
+		-- screenGroup:removeObject("portrait")
 		image = display.newImageRect( "EskoBgdLand5.png", 570, 360 )
 		image.x = display.contentWidth / 2
 		image.y = display.contentHeight / 2

@@ -57,7 +57,7 @@
 			else 
 				txt.x = xp + wid / 2 + design.cellfontfix
 			end
-			txt.y = txt.y + 4
+			txt.y = txt.y + design.cellfontfixY
 			grid:insert( txt, false )
 
 		end
@@ -85,6 +85,8 @@ design = {
 	leftcolfontfix = 6, 
 	-- in case your chosen font needs some alignment nudging
 	headerfontfix = 1, cellfontfix = 3,
+	-- for  table text height adjustment
+	cellfontfixY = 4,
 	-- colours
 	header = {
 		bg = { r = 169, g = 196, b = 147, a = 200 },

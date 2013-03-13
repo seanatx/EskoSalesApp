@@ -111,6 +111,7 @@ end
 function scene:destroyScene( event )
 	
 	print( "((destroying sceneArtiosCAD's view))" )
+	
 end
 
 ---------------------------------------------------------------------------------
