@@ -18,6 +18,7 @@ local storyboard = require ( "storyboard" )
 --import the button events library
 local ui = require("ui")
 
+
 display.setStatusBar( display.HiddenStatusBar ) 
 
 --initial values
@@ -25,7 +26,8 @@ local screenOffsetW, screenOffsetH = display.contentWidth -  display.viewableCon
 
 local myList, backBtn, detailScreenText
 
-function makeList( detailScreen )
+function makeList(  )
+local detailScreen = _G.screenGroup
 local background = display.newRect(0, 0, display.contentWidth, display.contentHeight)
 background:setFillColor(77, 77, 77)
 
@@ -100,27 +102,27 @@ end
 data[1] = {}
 data[1].title = "iXE10"
 data[1].subtitle = "28x40 Auto Cutting"
-data[1].image = "coffee1.png"
+data[1].image = "XE10.png"
 
 data[2] = {}
 data[2].title = "XN24"
 data[2].subtitle = "33in per second"
-data[2].image = "coffee2.png"
+data[2].image = "XN24.png"
 
 data[3] = {}
 data[3].title = "     XP24"
 data[3].subtitle = "     66in per second"
-data[3].image = "coffee3.png"
+data[3].image = "XP24.png"
 
 data[4] = {}
 data[4].title = "XN44"
 data[4].subtitle = "Carton Converting"
-data[4].image = "coffee4.png"
+data[4].image = "XN44.png"
 
 data[5] = {}
 data[5].title = "XPAuto"
 data[5].subtitle = "Wide Format print"
-data[5].image = "coffee5.png"
+data[5].image = "XPAuto.png"
 
 
 --iPad: duplicate some of the sample data to make the list longer

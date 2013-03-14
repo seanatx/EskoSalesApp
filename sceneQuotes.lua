@@ -8,7 +8,7 @@ local storyboard = require( "storyboard" )
 local scene = storyboard.newScene()
 local grid = require( "grid" ) 
 local KongsList = require( "KongsList" )
-local screenGroup
+_G.screenGroup = nil
 
 ---------------------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
@@ -28,13 +28,13 @@ end
 
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
-	screenGroup = self.view
+	_G.screenGroup = self.view
 
 
 	image = display.newImageRect( "Default-568h@2x.png", 360, 570 )
 	image.x = display.contentWidth / 2
 	image.y = display.contentHeight / 2
-	screenGroup:insert( image )
+	_G.screenGroup:insert( image )
 	
 	image.touch = onSceneTouch
 	
@@ -42,19 +42,19 @@ function scene:createScene( event )
 	text1:setTextColor( 0 )
 	text1:setReferencePoint( display.CenterReferencePoint )
 	text1.x, text1.y = display.contentWidth * 0.5, 50
-	screenGroup:insert( text1 )
+	_G.screenGroup:insert( text1 )
 	
 	text2 = display.newText( "MemUsage: ", 0, 0, native.systemFont, 16 )
 	text2:setTextColor( 0 )
 	text2:setReferencePoint( display.CenterReferencePoint )
 	text2.x, text2.y = display.contentWidth * 0.5, display.contentHeight - 90
-	screenGroup:insert( text2 )
+	_G.screenGroup:insert( text2 )
 	
 	text3 = display.newText( "Debug Mode", 0, 0, native.systemFontBold, 18 )
 	text3:setTextColor( 0 ); text3.isVisible = false
 	text3:setReferencePoint( display.CenterReferencePoint )
 	text3.x, text3.y = display.contentWidth * 0.5, display.contentHeight - 70
-	screenGroup:insert( text3 )
+	_G.screenGroup:insert( text3 )
 	
 	-- next 2 lines draw a grid (see grid.lua )
 	-- local t = createGrid( design, data )
@@ -82,7 +82,7 @@ function scene:enterScene( event )
 	end
 	memTimer = timer.performWithDelay( 1000, showMem, 1 )
 	
-	makeList( screenGroup )
+	makeList(  )
 end
 
 
